@@ -1,4 +1,7 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from dotenv import load_dotenv
+
+load_dotenv(dotenv_path="src/.env")
 
 class Settings(BaseSettings):
     APP_NAME: str
