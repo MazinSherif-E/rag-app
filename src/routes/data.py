@@ -2,7 +2,7 @@ from fastapi import FastAPI, APIRouter, Depends, UploadFile, status
 from fastapi.responses import JSONResponse
 import os
 from helpers.config import get_settings, Settings
-from controllers import DataController, ProjectController
+from controllers import DataController, ProjectController, ProcessController
 import aiofiles
 from models import ResponseSignal
 import logging
@@ -70,7 +70,7 @@ async def process_endpoint(project_id: str, process_request: ProcessRequest):
     chunk_size = process_request.chunk_size
     overlap_size = process_request.overlap_size
 
-    process_controller = process_controller(project_id=project_id)
+    process_controller = ProcessController(project_id=project_id)
 
     file_content = process_controller.get_file_content(file_id=file_id)
 
