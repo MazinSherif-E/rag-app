@@ -46,9 +46,10 @@ async def upload_data(project_id: str, file: UploadFile,
 
         logger.error(f"Error while uploading file: {e}")
 
+
         return JSONResponse(
             status_code=status.HTTP_400_BAD_REQUEST,
-            content={
+            content={ 
                 "signal": ResponseSignal.FILE_UPLOAD_FAILED.value
             }
         )
