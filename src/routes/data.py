@@ -7,7 +7,7 @@ import aiofiles
 from models import ResponseSignal
 import logging
 
-from src.routes.schemas.data import ProcessRequest
+from routes.schemas.data import ProcessRequest
 
 logger = logging.getLogger('uvicorn.error')
 
