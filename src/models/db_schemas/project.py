@@ -13,5 +13,5 @@ class Project(BaseModel):
         
         return value
 
-    class Config:
+    class Config: # skip ObjectId as it's strange on pydantic
         arbitrary_types_allowed = True  
