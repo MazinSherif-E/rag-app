@@ -1,19 +1,20 @@
 services:
   mongodb:
     image: mongo:7-jammy
-    
     container_name: mongodb
-    
     ports:
       - "27017:27017"
-    
     volumes:
-      - ./mongodb:/data/db
-    
+      - mongodb_data:/data/db
     networks:
       - backend
-    
     restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password
 
 networks:
   backend:
+
+volumes:
+  mongodb_data:    # This creates a named volume
