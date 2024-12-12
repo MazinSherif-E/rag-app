@@ -15,3 +15,16 @@ class Project(BaseModel):
 
     class Config: # skip ObjectId as it's strange on pydantic
         arbitrary_types_allowed = True  
+    
+    @classmethod
+    def get_indecies(cls):
+
+        return [
+            {
+                "key": [
+                    ("project_id", 1)
+                ],
+                "name": "project_id_index_1",
+                "unique": True
+            }
+        ]
