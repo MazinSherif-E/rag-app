@@ -16,7 +16,7 @@ class Asset(BaseModel):
         arbitrary_types_allowed = True
 
     @classmethod
-    def get_indexes(cls):
+    def get_indecies(cls):
 
         return [
             {
