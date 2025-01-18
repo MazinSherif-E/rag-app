@@ -9,9 +9,6 @@ class Settings(BaseSettings):
     FILE_ALLOWED_TYPES: list
     FILE_MAX_SIZE: int
     FILE_DEFAULT_CHUNK_SIZE: int
-
-    MONGODB_URL: str
-    MONGODB_NAME: str
     
     GENERATION_BACKEND: str
     EMBEDDING_BACKEND: str
@@ -34,6 +31,13 @@ class Settings(BaseSettings):
     
     DEFAULT_LANG: str = "en"
     PRIMARY_LANG: str = "en"
+    
+    POSTGRES_PASSWORD: str
+    POSTGRES_USERNAME: str
+    POSTGRES_DB_NAME: str
+    POSTGRES_HOST: str
+    POSTGRES_MAIN_DATABASE: str
+    POSTGRES_PORT: int
     
     class Config:
         env_file = ".env"
